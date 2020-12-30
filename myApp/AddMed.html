@@ -1,0 +1,70 @@
+<div ng-controller="addMedController">
+
+  <div class="alert alert-success" ng-show="myShow">
+    <strong>{{mName}}</strong> added successfully..!!!
+  </div>
+  <div ng-hide="myShow">
+    <form name="formValidation">
+      <fieldset>
+
+        <div class="form-group">
+          <label for="medName">Medicine Name</label>
+          <input type="text" class="form-control" id="medName" name="medName" ng-model="newMed.medName"
+            placeholder="Enter Medicine Name.." required aria-describedby="medNameHelp">
+          <div ng-messages="formValidation.medName.$error">
+            <small ng-message="required">*Medicine Name is required.</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="brandName">Company Name</label>
+          <input type="text" class="form-control" id="brandName" name="brandName" ng-model="newMed.brandName"
+            placeholder="Enter Company Name.." required aria-describedby="brandNameHelp">
+          <div ng-messages="formValidation.brandName.$error">
+            <small ng-message="required">*Company Name is required.</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="doseLevel">Dose Level</label>
+          <input type="text" class="form-control" id="doseLevel" name="doseLevel" ng-model="newMed.doseLevel"
+            placeholder="Enter Dose Level.." required aria-describedby="doseLevelHelp">
+          <div ng-messages="formValidation.doseLevel.$error">
+            <small ng-message="required">*Dose Level is required.</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="medType">Medicine Type</label>
+
+          <select class="form-control" id="medType" ng-model="newMed.medType">
+            <option>Oil</option>
+            <option>Liquid</option>
+            <option>Oinment</option>
+            <option>Tablet</option>
+          </select>
+
+        </div>
+        <div class="form-group">
+          <label for="boxNo">Box No</label>
+          <input type="text" class="form-control" id="boxNo" name="boxNo" ng-model="newMed.boxNo"
+            placeholder="Enter Box No.." required aria-describedby="boxNoHelp">
+          <div ng-messages="formValidation.boxNo.$error">
+            <small ng-message="required">*Box No is required.</small>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="quantity">Quantity</label>
+          <input type="number" class="form-control" id="quantity" name="quantity" ng-model="newMed.quantity"
+            placeholder="Enter Quantity.." required aria-describedby="quantityHelp">
+          <div ng-messages="formValidation.quantity.$error">
+            <small ng-message="required">*Quantity is required.</small>
+          </div>
+        </div>
+        <button ng-click="saveData(newMed)" class="btn btn-primary"><i class="fa fa-check" aria-hidden="true"></i>
+          Submit</button>
+        <button class="btn btn-secondary" ng-click="cancel()"><i class="fa fa-times" aria-hidden="true"></i>
+          Cancel</button>
+      </fieldset>
+    </form>
+  </div>
+
+</div>
+<br><br><br>

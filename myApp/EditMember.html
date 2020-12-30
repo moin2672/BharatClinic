@@ -1,0 +1,65 @@
+<div ng-controller="editMemberController">
+
+    <div class="alert alert-success" ng-show="myShow">
+        <strong>{{mName}}</strong> updated successfully..!!!
+    </div>
+    <div ng-hide="myShow">
+
+        <button ng-click="deleteMember()" class="btn btn-danger"><i class="fa fa-trash-o"></i> Delete
+            *{{newMember.memberName}}</button>
+        <br>
+        <br>
+        <form name="formValidation">
+            <fieldset>
+                <div class="form-group">
+                    <label for="memberID">Member ID</label>
+                    <input type="text" class="form-control" id="memberID" name="memberID" ng-model="newMember.memberID"
+                        placeholder="Enter Member ID.." required aria-describedby="memberIDHelp">
+                    <div ng-messages="formValidation.memberID.$error">
+                        <small ng-message="required">*Member ID is required.</small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="memberName">Member Name</label>
+                    <input type="text" class="form-control" id="memberName" name="memberName"
+                        ng-model="newMember.memberName" placeholder="Enter Member Name.." required
+                        aria-describedby="memberNameHelp">
+                    <div ng-messages="formValidation.memberName.$error">
+                        <small ng-message="required">*Member Name is required.</small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="memberLocation">Location</label>
+                    <input type="text" class="form-control" id="memberLocation" name="memberLocation"
+                        ng-model="newMember.memberLocation" placeholder="Enter Location.." required
+                        aria-describedby="memberLocationHelp">
+                    <div ng-messages="formValidation.memberLocation.$error">
+                        <small ng-message="required">*Location is required.</small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="memberPhoneNo">Phone No</label>
+                    <input type="text" class="form-control" id="memberPhoneNo" name="memberPhoneNo"
+                        ng-model="newMember.memberPhoneNo" placeholder="Enter Phone No.." required
+                        aria-describedby="memberPhoneNoHelp">
+                    <div ng-messages="formValidation.memberPhoneNo.$error">
+                        <small ng-message="required">*Phone No is required.</small>
+                    </div>
+                </div>
+
+                <div class="form-group form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="checkbox" ng-model="newMember.memberWhatsApp" ng-checked="newMember.memberWhatsApp">
+                        In WhatsApp..
+                    </label>
+                </div>
+                <button ng-click="updateData(newMember)" class="btn btn-primary"><i class="fa fa-refresh"
+                        aria-hidden="true"></i> Update</button>
+                <button class="btn btn-secondary" ng-click="cancel()"><i class="fa fa-times" aria-hidden="true"></i>
+                    Cancel</button>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<br><br><br>
